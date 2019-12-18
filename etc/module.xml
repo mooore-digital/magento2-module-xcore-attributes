@@ -4,6 +4,7 @@
     <module name="Mooore_XcoreAttributes" setup_version="1.0.0">
         <sequence>
             <module name="Dealer4dealer_Xcore"/>
+            <module name="Magento_Customer"/>
         </sequence>
     </module>
 </config>
