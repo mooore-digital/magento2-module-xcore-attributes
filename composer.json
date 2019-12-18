@@ -1,0 +1,20 @@
+{
+    "name": "mooore/magento2-module-xcore-attributes",
+    "description": "Magento 2 module for providing specific xCore attributes in the REST API.",
+    "require": {
+        "dealer4dealer/xcore-magento2": "^2.1"
+    },
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "MIT"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Mooore\\XcoreAttributes\\": ""
+        }
+    }
+}

@@ -1,0 +1,15 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
+    <extension_attributes for="Magento\Customer\Api\Data\CustomerInterface">
+        <attribute code="xcore_price_list" type="string">
+            <resources>
+                <resource ref="Magento_Customer::manage"/>
+            </resources>
+        </attribute>
+        <attribute code="xcore_vat_code" type="string">
+            <resources>
+                <resource ref="Magento_Customer::manage"/>
+            </resources>
+        </attribute>
+    </extension_attributes>
+</config>
