@@ -6,7 +6,7 @@ namespace Mooore\XcoreAttributes\Plugin;
 
 use Magento\Customer\Api\CustomerRepositoryInterface as Subject;
 use Magento\Customer\Api\Data\CustomerInterface;
-use Magento\Customer\Api\Data\CustomerSearchResultsInterface;
+use Magento\Framework\Api\SearchResultsInterface;
 use Mooore\XcoreAttributes\Service\PopulateAttributes;
 
 class CustomerRepositoryInterfacePlugin
@@ -33,8 +33,8 @@ class CustomerRepositoryInterfacePlugin
 
     public function afterGetList(
         Subject $subject,
-        CustomerSearchResultsInterface $searchResults
-    ): CustomerSearchResultsInterface {
+        SearchResultsInterface $searchResults
+    ): SearchResultsInterface {
         foreach ($searchResults->getItems() as $customer) {
             $this->populateAttributes->execute($customer);
         }
