@@ -31,14 +31,13 @@ class PopulateAttributes
         $extensionAttributes = $customer->getExtensionAttributes();
 
         $priceList = $this->getCustomAttributeValue($customer, 'price_list');
-        $priceListGuid = $priceList !== null ? $this->mapPriceList($priceList) : null;
+        $priceListGuid = !empty($priceList) ? $this->mapPriceList($priceList) : null;
         if ($priceListGuid !== null) {
-            $extensionAttributes->setXcorePriceList(
-                $this->mapPriceList($priceList)
-            );
+            $extensionAttributes->setXcorePriceList($priceListGuid);
         }
 
         $vatClass = $this->getCustomAttributeValue($customer, 'vat_class');
+
         if ($vatClass !== null) {
             $extensionAttributes->setXcoreVatCode($vatClass);
         }
@@ -46,7 +45,7 @@ class PopulateAttributes
         return $customer;
     }
 
-    private function mapPriceList(string $priceListId): string
+    private function mapPriceList(string $priceListId): ?string
     {
         try {
             return $this->priceListRepository->getById($priceListId)->getGuid();
