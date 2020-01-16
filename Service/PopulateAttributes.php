@@ -59,6 +59,6 @@ class PopulateAttributes
     {
         $attribute = $customer->getCustomAttribute($attribute);
 
-        return $attribute !== null ? $attribute->getValue() : null;
+        return $attribute !== null ? (string) $attribute->getValue() : null;
     }
 }
